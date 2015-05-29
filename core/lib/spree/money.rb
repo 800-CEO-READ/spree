@@ -1,11 +1,13 @@
 require 'money'
+require 'monetize'
 
 module Spree
   class Money
     attr_reader :money
 
     def initialize(amount, options={})
-      @money = ::Money.parse([amount, (options[:currency] || Spree::Config[:currency])].join)
+      currency = options[:currency] || Spree::Config[:currency]
+      @money = ::Monetize.parse("#{currency} #{amount}")
       @options = {}
       @options[:with_currency] = Spree::Config[:display_currency]
       @options[:symbol_position] = Spree::Config[:currency_symbol_position].to_sym
