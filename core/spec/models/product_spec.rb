@@ -296,7 +296,7 @@ describe Spree::Product do
           @product2 = create(:product, :name => 'foo')
           lambda do
             @product2.update_attributes(:permalink => @product1.permalink)
-          end.should raise_error(ActiveRecord::RecordNotUnique)
+          end.should raise_error(ActiveRecord::StatementInvalid)
         end
       end
 
