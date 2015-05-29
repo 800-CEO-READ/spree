@@ -37,8 +37,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'kaminari', '0.14.1'
   s.add_dependency 'deface', '>= 0.9.0'
   s.add_dependency 'stringex', '~> 1.3.2'
+  s.add_dependency 'money', '~> 6.5.1'
+  s.add_dependency 'monetize', '~> 1.3.0'
   s.add_dependency 'cancan', '1.6.8'
-  s.add_dependency 'money', '5.1.1'
   s.add_dependency 'rabl', '0.7.2'
   # Latest truncate_html supports only Ruby 1.9
   s.add_dependency 'truncate_html', '~> 0.5.5'
