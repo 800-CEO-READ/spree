@@ -28,12 +28,12 @@ describe "Visiting Products" do
     end
 
     # Regression tests for #2737
-    context "uses руб as the currency symbol" do
+    context "uses \u20BD as the currency symbol" do
       it "on products page" do
         visit spree.root_path
         within("#product_#{product.id}") do
           within(".price") do
-            page.should have_content("руб19.99")
+            page.should have_content("\u20BD19.99")
           end
         end
       end
@@ -41,7 +41,7 @@ describe "Visiting Products" do
       it "on product page" do
         visit spree.product_path(product)
         within(".price") do
-          page.should have_content("руб19.99")
+          page.should have_content("\u20BD19.99")
         end
       end
 
@@ -50,7 +50,7 @@ describe "Visiting Products" do
         click_button "Add To Cart"
         click_link "Home"
         within(".cart-info") do
-          page.should have_content("руб19.99")
+          page.should have_content("\u20BD19.99")
         end
       end
     end
